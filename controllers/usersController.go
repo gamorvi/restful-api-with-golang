@@ -11,6 +11,7 @@ import (
 	"github.com/gorilla/mux"
 )
 
+// Get one user by id
 func OneUsers(w http.ResponseWriter, r *http.Request) {
 	params := mux.Vars(r)
 	id, err := strconv.Atoi(params["id"])
@@ -20,21 +21,27 @@ func OneUsers(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	result := models.GetUser(id)
-	if result == nil {
+	user := models.GetUser(id)
+	if user == nil {
 		u.Respond(w, u.Message(false, "User not found"))
 		return
 	}
 
 	resp := u.Message(true, "success")
-	resp["data"] = result
+	resp["data"] = user
 	u.Respond(w, resp)
 	return
 }
 
+// Get all the users in the users table
 func AllUsers(w http.ResponseWriter, r *http.Request) {
 	resp := u.Message(true, "success")
-	resp["data"] = models.GetUsers()
+	users := models.GetUsers()
+	if users != nil {
+		u.Respond(w, u.Message(false, "No users found"))
+		return
+	}
+	resp["data"] = users
 	u.Respond(w, resp)
 	return
 }
