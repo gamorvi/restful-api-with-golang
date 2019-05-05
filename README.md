@@ -44,3 +44,15 @@ Create a .env file in the root of the project and set the following parameters
 * POST `api/v1/users` create a new user
 * PUT `api/v1/users/1` update the record with id = 1
 * DELETE `api/v1/users/1` delete the user with id = 1
+
+## Database Create Statement
+
+`CREATE TABLE `users` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `deleted_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;`
