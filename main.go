@@ -6,8 +6,8 @@ import (
 	"net/http"
 	"os"
 
-	controllers "github.com/gamorvi/restapi/controllers"
 	_ "github.com/gamorvi/restapi/models"
+	routes "github.com/gamorvi/restapi/routes"
 	"github.com/gorilla/mux"
 )
 
@@ -21,13 +21,7 @@ func startServer() {
 	fmt.Println("Server started at " + port + "...")
 	r := mux.NewRouter().StrictSlash(true)
 	// Routes
-	s := r.PathPrefix(prefix).Subrouter()
-	r.HandleFunc("/", helloWorld).Methods("GET")
-	s.HandleFunc("/users", controllers.AllUsers).Methods("GET")
-	s.HandleFunc("/users/{id:[0-9]+}", controllers.OneUsers).Methods("GET")
-	s.HandleFunc("/users", controllers.CreateUser).Methods("POST")
-	s.HandleFunc("/users/{id:[0-9]+}", controllers.UpdateUser).Methods("PUT")
-	s.HandleFunc("/users/{id:[0-9]+}", controllers.DeleteUser).Methods("DELETE")
+	routes.ApiRoutes(prefix, r)
 
 	//Start Server on the port set in your .env file
 	err := http.ListenAndServe(":"+port, r)
