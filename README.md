@@ -87,7 +87,7 @@ CREATE TABLE `users` (
 
 ### To create a new user
 
-POST `api/v1/users`
+1. POST `api/v1/users`
 
 ```
 {
@@ -110,5 +110,24 @@ POST `api/v1/users`
         "Name": "Joe Bloke",
         "Email": "joe.bloke@fake-domain.com"
     }
+}
+```
+
+2. Get `api/v1/users/1`
+
+*** Output ***
+
+```
+{
+    "data": {
+        "ID": 1,
+        "CreatedAt": "2019-05-05T23:54:22Z",
+        "UpdatedAt": "2019-05-05T23:54:22Z",
+        "DeletedAt": null,
+        "Name": "Joe Bloke",
+        "Email": "joe.bloke@fake-domain.com"
+    },
+    "message": "success",
+    "status": true
 }
 ```
