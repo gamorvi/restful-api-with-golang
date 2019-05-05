@@ -19,23 +19,23 @@ Create a .env file in the root of the project and set the following parameters
 
 `db_name = database_name` Name of database
 
-`db_user = user`  // Database username
+`db_user = user`  # Database username
 
-`db_pass = secret` // Database password
+`db_pass = secret` # Database password
 
-`db_type = mysql`   // MySQL driver
+`db_type = mysql`   # MySQL driver
 
-`db_host = localhost` // Database host
+`db_host = localhost` # Database host
 
-`db_port = 3306`  // Database port
+`db_port = 3306`  # Database port
 
-`charset = utf8` // Database charset
+`charset = utf8` # Database charset
 
-`parse_time = True` // Database parse time
+`parse_time = True` # Database parse time
 
-`web_port = 8085`   // Port to serve api
+`web_port = 8085`   # Port to serve api
 
-`prefix = /api/v1`  // API route sub route prefix
+`prefix = /api/v1`  # API route sub route prefix
 
 ## API Endpoints
 
@@ -47,7 +47,8 @@ Create a .env file in the root of the project and set the following parameters
 
 ## Database Create Statement
 
-`CREATE TABLE `users` (
+``` SQL
+CREATE TABLE `users` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
@@ -55,4 +56,4 @@ Create a .env file in the root of the project and set the following parameters
   `updated_at` datetime DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;`
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;```
