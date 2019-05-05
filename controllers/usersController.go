@@ -37,7 +37,7 @@ func OneUsers(w http.ResponseWriter, r *http.Request) {
 func AllUsers(w http.ResponseWriter, r *http.Request) {
 	resp := u.Message(true, "success")
 	users := models.GetUsers()
-	if users != nil {
+	if users == nil {
 		u.Respond(w, u.Message(false, "No users found"))
 		return
 	}

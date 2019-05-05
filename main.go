@@ -11,10 +11,6 @@ import (
 	"github.com/gorilla/mux"
 )
 
-func helloWorld(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Hello World!")
-}
-
 func startServer() {
 	port := os.Getenv("web_port")
 	prefix := os.Getenv("prefix")
