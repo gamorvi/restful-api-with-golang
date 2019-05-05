@@ -45,7 +45,7 @@ Create a .env file in the root of the project and set the following parameters
 * PUT `api/v1/users/1` update the record with id = 1
 * DELETE `api/v1/users/1` delete the user with id = 1
 
-## Database Create Statement
+## Database Table Creation Statement
 
 ``` SQL
 CREATE TABLE `users` (
