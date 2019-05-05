@@ -1,6 +1,31 @@
 # Golang Restful API using GORM ORM (MySQL) Gorilla Mux
 
 ## Getting Started
+
+### Folder Structure
+This is my folder structure under my `$GOPATH` or `$HOME/your_username/go`.
+```
+.
++-- bin
++-- src
+|   +-- github.com
+|       +--gamorvi
+|          +--restapi
+|             +--.env
+|             +--main.go
+|             +--controllers
+|                +--usersController.go
+|             +--models
+|                +--base.go
+|                +--user.go
+|             +--routes
+|                +--api.go
+|             +--utils
+|                +--utils.go
+```
+Ensure you create the `gamorvi` directory in your `github.com` directory. `cd` into the `gamorvi` directory before `git clone https://github.com/gamorvi/restful-api-with-golang.git`
+
+## Download the packages used to create this rest API 
 Run the following Golang commands to install all the necessary packages.
 
 `go get -u github.com/gorilla/mux` for serving the api
