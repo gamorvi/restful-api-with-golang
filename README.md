@@ -62,15 +62,8 @@ Create a .env file in the root of the project and set the following parameters
 
 `prefix = /api/v1`  # API route sub route prefix
 
-## API Endpoints
-
-* GET `api/v1/users` retrieve all users
-* GET `api/v1/users/1` retrieve user with id = 1
-* POST `api/v1/users` create a new user
-* PUT `api/v1/users/1` update the record with id = 1
-* DELETE `api/v1/users/1` delete the user with id = 1
-
 ## Database Table Creation Statement
+Use the following DDL (Data Definition Language) to create the users table.
 
 ``` SQL
 CREATE TABLE `users` (
@@ -81,4 +74,41 @@ CREATE TABLE `users` (
   `updated_at` datetime DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;```
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+```
+
+## API Endpoints & Usage
+
+* GET `api/v1/users` retrieve all users
+* GET `api/v1/users/1` retrieve user with id = 1
+* POST `api/v1/users` create a new user
+* PUT `api/v1/users/1` update the record with id = 1
+* DELETE `api/v1/users/1` delete the user with id = 1
+
+### To create a new user
+
+POST `api/v1/users`
+
+```
+{
+	"Name": "Joe Bloke",
+	"Email": "joe.bloke@fake-domain.com"
+}
+```
+
+*** Output ***
+
+```
+{
+    "message": "success",
+    "status": true,
+    "user": {
+        "ID": 1,
+        "CreatedAt": "2019-05-06T00:54:22.09382+01:00",
+        "UpdatedAt": "2019-05-06T00:54:22.09382+01:00",
+        "DeletedAt": null,
+        "Name": "Joe Bloke",
+        "Email": "joe.bloke@fake-domain.com"
+    }
+}
+```
