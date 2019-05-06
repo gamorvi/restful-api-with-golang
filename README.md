@@ -6,9 +6,9 @@
 This is my folder structure under my `$GOPATH` or `$HOME/your_username/go`.
 ```
 .
-+-- bin
-+-- src
-|   +-- github.com
+|-- bin
+|-- src
+|   |-- github.com
 |       |-- gamorvi
 |          |-- restapi
 |             |-- .env
@@ -16,12 +16,12 @@ This is my folder structure under my `$GOPATH` or `$HOME/your_username/go`.
 |             |-- controllers
 |                 +-- usersController.go
 |             |-- models
-|                +-- base.go
-|                +-- user.go
+|                 +-- base.go
+|                 +-- user.go
 |             |-- routes
-|                +-- api.go
+|                 +-- api.go
 |             |-- utils
-|                +-- utils.go
+|                 +-- utils.go
 ```
 Ensure you create the `gamorvi` directory in your `github.com` directory. `cd` into the `gamorvi` directory before `git clone https://github.com/gamorvi/restful-api-with-golang.git`
 
